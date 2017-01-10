@@ -1,0 +1,15 @@
+body {
+    /*text-align: center;*/
+}
+
+.label {
+    float: left;
+    width: 210px;
+    text-align: right;
+    clear: left;
+    margin-right: 5px;
+}
+
+input[type=submit] {
+    margin-left: 215px;
+}
