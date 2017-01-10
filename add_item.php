@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php
-        require_once("check_connection.php");
+        require_once("checkconnection.php");
         include('extra.php');
 
         if(isset($_REQUEST['submit'])) {
