@@ -15,9 +15,11 @@
             $city = $_REQUEST['city'];
             $qty = $_REQUEST['qty'];
 
+            // Check whether item is available at the store or not
             $q = "SELECT * from hold where store_id='$store' and item_id='$item'";
             $result = $dbcon->query($q);
             if($result->num_rows == 0) { // no items present at the store
+                // insert the item
                 $q = "INSERT into hold (store_id, item_id, qty_held) values ('$store', '$item', $qty)";
                 $result = $dbcon->query($q);
                 if($result) { // Items inserted succesfully in HOLD table, now check city details
