@@ -4,7 +4,7 @@
 $user = 'root';
 $pass = 'Mobile';
 $host = 'localhost';
-$dbname = 'warehouse';
+$dbname = 'warehouse0127';
 
 // Next we assign the database connection to a variable that we will call $dbcon:
 $dbcon = new mysqli($host, $user, $pass, $dbname) OR die ('Could not connect to MySQL: ' . $dbcon->connect_error);
