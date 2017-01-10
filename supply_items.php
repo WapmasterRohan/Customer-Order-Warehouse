@@ -20,7 +20,7 @@
             if($result->num_rows == 0) { // no items present at the store
                 $q = "INSERT into hold (store_id, item_id, qty_held) values ('$store', '$item', $qty)";
                 $result = $dbcon->query($q);
-                if(! $result) {
+                if($result) { // Items inserted succesfully in HOLD table, now check city details
                     $q = "SELECT * from item_city where item_id='$item' and city_id='$city'";
                     $result = $dbcon->query($q);
                     if($result->num_rows == 0) { // no items present in any store of the city 
