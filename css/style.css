@@ -21,7 +21,7 @@ input[type=submit] {
 .hidden {
     display: none;
 }
-table#item-list {
+table {
     width: 500px;
     margin: 0 auto;
 }
@@ -31,6 +31,6 @@ div .item-list-container {
 .span item-name {
     width: 250px;
 }
-.span item-price {
+.span item-price, .span item-id {
     width: 100px;
 }
