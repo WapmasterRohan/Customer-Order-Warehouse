@@ -43,11 +43,11 @@
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <p>
                 <label class="label" for="phone">Contact No: </label>
-                <input id="phone" type="text" name="phone" size="30" maxlength="60" value="<?php if (isset($_POST['phone'])) echo $_POST['phone']; ?>" required>
+                <input id="phone" type="text" name="phone" size="30" maxlength="60" required>
             </p>
             <p>
                 <label class="label" for="storage">Storage Space: </label>
-                <input id="storage" type="text" name="storage" size="20" maxlength="60" value="<?php if (isset($_POST['storage'])) echo $_POST['storage']; ?>" required>
+                <input id="storage" type="text" name="storage" size="20" maxlength="60" required>
             </p>
             <p>
                 <label class="label" for="city">Located in city:</label>
@@ -63,16 +63,16 @@
             </p>
         </form>
     </div>
-    <!--<script>
+    <script>
         $(document).ready(function({
             $('#Submit').on('click', function(event) {
                 var $temp = $('#city-option');
-                if($temp.val() == 0) {
+                if($temp.find('option:selected').val() == 0) {
                     event.preventDefault();
                     $('<span>').html('Select a city').insertAfter($temp);
                 }
             });
         }));
-    </script>-->
+    </script>
 </body>
 </html>

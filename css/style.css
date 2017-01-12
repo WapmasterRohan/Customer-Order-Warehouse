@@ -1,5 +1,9 @@
 body {
-    /*text-align: center;*/
+    text-align: center;
+}
+
+#loginfields {
+    margin: 0 auto;
 }
 
 .label {
@@ -12,4 +16,21 @@ body {
 
 input[type=submit] {
     margin-left: 215px;
+}
+
+.hidden {
+    display: none;
+}
+table#item-list {
+    width: 500px;
+    margin: 0 auto;
+}
+div .item-list-container {
+    margin: 0 auto;
+}
+.span item-name {
+    width: 250px;
+}
+.span item-price {
+    width: 100px;
 }
