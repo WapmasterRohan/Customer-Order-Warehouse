@@ -25,6 +25,7 @@
 </head>
 <body>
     Click on an item to order: <br>
+    (It is not possible to remove items after placing order)<br>
     <?php
     require("all_items.php");
     require("extra.php");
@@ -99,8 +100,23 @@
                 });
             });
             
-            $('button.submit-order').on('click', function() {
-
+            $('button#submit-order').on('click', function() {
+                $.ajax({
+                    type: 'POST',
+                    data: ({
+                        cust_id: "<?php echo $cust_id; ?>",
+                        order_no: "<?php echo $order_no; ?>"
+                    }),
+                    url: 'place_order.php',
+                    success: function(data) {
+                        var tempPrice = $('#total-price').text();
+                        $('#all-ordered-items').html("Order placed successfully!! Total cost: " + tempPrice);
+                        
+                        setTimeout(function() {
+                            window.location.href = "index.php";
+                        }, 3000);
+                    }
+                });
             });
         });
     </script>
