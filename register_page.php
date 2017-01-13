@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <?php include("menu.php"); ?>
     <div id="container">
          <div id="content">
             <?php

@@ -6,6 +6,11 @@ body {
     margin: 0 auto;
 }
 
+.centered {
+    width: 500px;
+    margin: 0 auto;
+}
+
 .label {
     float: left;
     width: 210px;
@@ -33,4 +38,8 @@ div .item-list-container {
 }
 .span item-price, .span item-id {
     width: 100px;
+}
+
+input {
+    float: left;
 }

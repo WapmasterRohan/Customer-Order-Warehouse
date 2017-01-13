@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if(session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
     if(isset($_SESSION['cust_level'])) {
         if($_SESSION['cust_level'] == 1) {
@@ -24,6 +26,8 @@
     <script src="js/jquery-3.0.0.js"></script>
 </head>
 <body>
+    <?php include("menu.php"); ?>
+
     Click on an item to order: <br>
     (It is not possible to remove items after placing order)<br>
     <?php

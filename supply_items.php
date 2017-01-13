@@ -11,6 +11,7 @@
     <?php
         require_once("checkconnection.php");
         include('extra.php');
+        include("menu.php");
 
         if(isset($_REQUEST['submit'])) {
             $store = $_REQUEST['store'];

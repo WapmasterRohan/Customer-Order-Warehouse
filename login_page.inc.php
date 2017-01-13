@@ -14,5 +14,6 @@
     <p>
         <input id="submit" type="submit" name="submit" value="Login">
     </p>
+    <br><br><div class="centered">Use 'banerjee1abhi@gmail.com' for normal user and 'rohangayen@gmail.com' for admin user id, password 123456 for both users. Login to normal user to check order page and admin page for modifying item and store info and report.</div><br>
 </form>
 <br />

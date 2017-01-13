@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>Create Store</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    <!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>-->
+    <script src="js/jquery-3.0.0.js"></script>
 </head>
 <body>
     <?php
         require_once("checkconnection.php");
         include("extra.php");
+        include("menu.php");
 
         if(isset($_REQUEST['submit'])) {
             $phone = $_REQUEST['phone'];
