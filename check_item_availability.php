@@ -28,7 +28,12 @@
                 }
                 else { // sufficient item is available at the city stores
                     $temp = $qty_in_city - $qty_demand;
-                    $q = "UPDATE item_city set qty_in_city=$temp where item_id='$item_id' and city_id=$city_id ";
+                    if($temp != 0) {
+                        $q = "UPDATE item_city set qty_in_city=$temp where item_id='$item_id' and city_id=$city_id ";
+                    }
+                    else {
+                        $q = "DELETE from item_city where item_id='$item_id' and city_id=$city_id ";
+                    }
                     $result = $dbcon->query($q);
                     
                     if($result) {
