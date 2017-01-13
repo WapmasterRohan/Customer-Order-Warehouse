@@ -7,7 +7,7 @@
 
     <p>
         <label class="label" for="psword">Password:*</label>
-        <input id="psword" type="password" name="psword" size="12" maxlength="12" value="<?php if (isset($_POST['psword'])) echo $_POST['psword']; ?>" required>
+        <input id="psword" type="password" name="psword" size="12" maxlength="12" value="" required>
         <span>&nbsp;Between 6 and 12 characters.</span> 
     </p>
     

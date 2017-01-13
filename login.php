@@ -17,17 +17,22 @@
                 $q = "SELECT cust_id, fname, cust_level, city_id from customers where (email = '$e' and psword = SHA1('$p'))";
                 $result = $dbcon->query($q);
 
-                if($result) {
-                    session_start();
-                    $_SESSION = $result->fetch_assoc();
-                    $_SESSION['cust_level'] = (int) $_SESSION['cust_level'];
-                    $url = ($_SESSION['cust_level'] == 1) ? 'admin_index.php' : 'index.php';
-                    header("Location: $url");
-                    exit();
-                    
-                    $result->free_result();
-                    $dbcon->close();
-                }
+                // if($result) {
+                    if($result->num_rows) {
+                        session_start();
+                        $_SESSION = $result->fetch_assoc();
+                        $_SESSION['cust_level'] = (int) $_SESSION['cust_level'];
+                        $url = ($_SESSION['cust_level'] == 1) ? 'admin_index.php' : 'index.php';
+                        header("Location: $url");
+                        exit();
+                        
+                        $result->free_result();
+                        $dbcon->close();
+                    }
+                    else {
+                        echo "Wrong email id or password. ";
+                    }
+                // }
             }
         }
     ?>

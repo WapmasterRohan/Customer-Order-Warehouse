@@ -30,6 +30,7 @@
     require("extra.php");
 
     $order_no = random_string('ODR', 4);
+    $cust_id = $_SESSION['cust_id'];
     ?>
     <div id="all-ordered-items" class='hidden'>
         <h3>Ordered items</h3>
@@ -72,7 +73,8 @@
                     data: ({
                         item_id: id,
                         city_id: city,
-                        qty: qty
+                        qty: qty,
+                        order_no: '<?php echo $order_no; ?>'
                     }),
                     url: 'check_item_availability.php',
                     success: function(data) {
@@ -90,16 +92,16 @@
                         else if(data == 0) {
                             alert('Item is not available at stores. ');
                         }
-                        else {
+                        else if(data == 2) {
                             alert('Item available but not enough, order some lower amount. ');
                         }
                     }
                 });
-
-                // console.log(qty, name, id, totPrice, tempPrice, city);
             });
             
-            $('button.submit-order').on('click', function() {});
+            $('button.submit-order').on('click', function() {
+
+            });
         });
     </script>
 </body>
