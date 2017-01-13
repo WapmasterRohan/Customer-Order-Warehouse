@@ -76,7 +76,7 @@
                     }),
                     url: 'check_item_availability.php',
                     success: function(data) {
-                        if(data.avl) {
+                        if(data == 1) {
                             // update the order list
                             $('#order-list').append('<tr><td>' + name + '</td><td>' + id + '</td><td>' + qty + '</td><td>' + totPrice + '</td></tr>');
                             var tempPrice = +$('#total-price').text();
@@ -87,8 +87,11 @@
                                 $('#all-ordered-items').removeClass('hidden');
                             }
                         }
-                        else {
+                        else if(data == 0) {
                             alert('Item is not available at stores. ');
+                        }
+                        else {
+                            alert('Item available but not enough, order some lower amount. ');
                         }
                     }
                 });
