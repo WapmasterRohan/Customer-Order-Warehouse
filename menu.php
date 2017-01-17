@@ -10,7 +10,8 @@
         if($_SESSION['cust_level'] == 1) {
             echo "<br><a href='create_store.php'>Create Store</a><br>";
             echo "<a href='add_item.php'>Add New Item</a><br>";
-            echo "<a href='supply_items.php'>Supply Items to Stores</a><br>";
+            echo "<a href='supply_items.php'>Supply Items to Stores</a><br><br>";
+            echo "<a href='index.php'>Return to home</a><br>";
         }
     }
     else {
